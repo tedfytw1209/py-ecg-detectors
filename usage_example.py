@@ -10,7 +10,9 @@ current_dir = pathlib.Path(__file__).resolve()
 
 example_dir = current_dir.parent/'example_data'/'ECG.tsv'
 unfiltered_ecg_dat = np.loadtxt(example_dir) 
-unfiltered_ecg = unfiltered_ecg_dat[:, 0]
+print(unfiltered_ecg_dat.shape)
+unfiltered_ecg = unfiltered_ecg_dat[:, 1]
+print(unfiltered_ecg.shape)
 fs = 250
 
 detectors = Detectors(fs)
